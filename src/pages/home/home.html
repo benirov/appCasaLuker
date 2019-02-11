@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Casa Luker
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    
+      <div>
+          <ion-item no-lines>
+          <img src="../../assets/imgs/casa_luker.jpg" class="imgCasaluker">
+        </ion-item>
+          <ion-item no-lines class="text-center">
+              <ion-label class=" text-danger">Radicar Solicitud</ion-label>
+          </ion-item>
+      </div>
+
+    
+      
+    <!-- <div class="mauto">
+      <ion-label class=" text-danger">Radicar Solicitud</ion-label>
+    </div> -->
+  
+    <ion-item>
+      <ion-input  type="text" placeholder="codigoSAP" id="codigoSAP" [(ngModel)]="codigoSap"></ion-input>
+      <button clear item-right (click)="findCodigoSap($event)" style="
+      width: 30%;
+      height: 70%;
+      border-radius: 10px 10px 10px 10px;" class="mauto  bg-danger cursor">consultar</button>
+     </ion-item>
+    <ion-item no-lines>
+        <ion-icon name="md-contact" item-start class="text-danger"></ion-icon>
+        <ion-label  class="text-danger">Cliente:</ion-label>
+        <ion-input  type="text" placeholder="Nombre" id="nombre"></ion-input>
+    </ion-item>
+    <!-- <ion-item no-lines>
+        <ion-icon name="md-at" item-start class="text-danger"></ion-icon>
+        <ion-input  type="text" placeholder="codigoSAP" id="codigoSAP" [(ngModel)]="codigoSap" (ionChange)="onChangeCodigoSap($event)"></ion-input>
+        <ion-input  type="text" placeholder="codigoSAP" id="codigoSAP" [(ngModel)]="codigoSap" (ionChange)="onChangeCodigoSap($event)"></ion-input>
+    </ion-item> -->
+      <ion-item padding>
+        <ion-label  class="mauto text-danger">Solicitante</ion-label>
+        <ion-select [(ngModel)]="Solicitante">
+          <ion-option value="1" selected>Cliente Actual</ion-option>
+          <!-- <ion-option value="2">Consumidor</ion-option>
+          <ion-option value="3">Cliente/ Proveedor</ion-option> -->
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label  class="mauto text-danger">Dependencia</ion-label>
+          <ion-select [(ngModel)]="dependencia" disabled ="{{isEnabledDependencia}}" (ionChange)="onChangeDependencia($event)" id="dependencia">
+              <ion-option value="2">Calidad Cliente</ion-option>
+              <ion-option value="3">Logistica</ion-option>
+              <ion-option value="4">Cartera</ion-option>
+              <ion-option value="5">Nomina</ion-option>
+              <ion-option value="6">Comercial</ion-option>
+              <ion-option value="7">Servicio al Cliente</ion-option>
+          </ion-select>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label  class="mauto text-danger">Categoria</ion-label>
+        <ion-select [(ngModel)]="Categoria" disabled ="{{isEnabledCategoria}}" (ionChange)="onChangeCategoria($event)" id="categoria">
+            <ion-option *ngFor="let keys of CategoryItem" [value]="keys.id">{{[keys.text]}}</ion-option>
+        </ion-select>
+  </ion-item>
+  <br>
+    <ion-item>
+        <ion-label  class="mauto text-danger">Tipo de Solicitud</ion-label>
+        <ion-select [(ngModel)]="tiposolicitud" disabled ="{{isEnabledTipoSolicitud}}" id="tiposolicitud">
+            <ion-option *ngFor="let keys of SolicitudItem" [value]="keys.id">{{[keys.text]}}</ion-option>
+            
+        </ion-select>
+  </ion-item>
+  <br>
+  <br>
+    <div id="AddProducto" class="mauto  bg-danger cursor" (click)="openModal()" style="display:none">
+        <ion-label class="text-white  labelmargin0 text-center">Agregar Producto</ion-label>
+    </div>
+    <div class="accordion">
+      <ul id="ListProduct">
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+    <br>
+    <br>
+    <!-- asunto -->
+    <div>
+        <ion-item no-lines>
+            <ion-icon name="create" item-start class="text-danger"></ion-icon>
+            <ion-label floating class=text-danger>Asunto:</ion-label>
+            <ion-textarea  id="asunto"></ion-textarea>
+        </ion-item>
+
+    </div>
+    <br>
+
+    <!-- descrip -->
+    <div>
+
+        <ion-item no-lines>
+            <ion-icon name="create" item-start class="text-danger"></ion-icon>
+            
+            <ion-textarea  id="descrip" placeholder="descripción"></ion-textarea>
+        </ion-item>
+
+    </div>
+    <br>
+
+
+    <!-- file -->
+    <div>
+
+        <!-- <ion-item> -->
+            <label id="profile_image" color="primary" stacked>Adjuntar archivo</label>
+            <!-- <ion-input type="file" accept="image/*" id="fileImg"  (change)="fileUpload($event)"></ion-input> -->
+            <input type="file"  (change)="fileUpload($event)" placeholder="Upload file..." />
+            <img id="imgPreview" [src]="url" alt="your image" />
+            <!-- <input type='file' onchange="fileUpload(this);" /> -->
+          <!-- </ion-item> -->
+          <ion-item  id="divImg">
+              <img   src=""/>
+              <!-- <img id="imgPreview" [src]="url" alt="your image" /> -->
+            </ion-item>
+          
+
+    </div>
+    <br>
+    <div class="mauto  bg-danger cursor" (click)="openModal()">
+        <ion-label class="text-white  labelmargin0 text-center">Guardar</ion-label>
+    </div>
+    <br>
+    <br>
+    <br>
+
+      
+</ion-content>

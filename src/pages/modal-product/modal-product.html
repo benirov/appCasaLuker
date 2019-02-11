@@ -1,0 +1,78 @@
+<!--
+  Generated template for the ModalProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Productos</ion-title>
+        <ion-buttons end>
+        <button ion-button (click)="closeModal()">Close</button>
+        </ion-buttons>
+    </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+
+        <ion-label floating class="mauto text-danger">Cargar Producto</ion-label>
+        <br>
+        <br>
+
+        <ion-item no-lines>
+            <ion-icon name="md-create" item-start class="text-danger"></ion-icon>
+            <ion-label floating class=text-danger>Nombre Producto:</ion-label>
+            <ion-input  type="text" [(ngModel)]="nombreProducto" placeholder="Nombre Producto" id="nombreProducto"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-input  type="number" [(ngModel)]="CodigoBarras" placeholder="Codigo de barras" id="CodigoBarras"></ion-input>
+            <button clear item-right (click)="findCodigoQr($event)" style="
+                width: 30%;
+                height: 70%;
+                border-radius: 10px 10px 10px 10px;" class="mauto  bg-danger cursor">consultar</button>
+        </ion-item>
+        
+        
+        <ion-item no-lines>
+            <ion-icon name="md-calculator" item-start class="text-danger"></ion-icon>
+            <ion-label floating class=text-danger>Lote:</ion-label>
+            <ion-input  type="text" [(ngModel)]="LoteNumber" id="LoteNumber"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-icon name="md-calendar" item-start class="text-danger"></ion-icon>
+            <ion-label floating class=text-danger>Fecha de vencimiento:</ion-label>
+            <ion-datetime displayFormat="" min="{{dataRange}}" max="2090-10-31" [(ngModel)]="fechaVencimiento" id="fechaVencimiento">
+              </ion-datetime>
+            <!-- <ion-input  type="date"  [(ngModel)]="fechaVencimiento" displayFormat=""  placeholder=""></ion-input> -->
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-icon name="md-calendar" item-start class="text-danger"></ion-icon>
+            <ion-label floating class=text-danger>Cantidad:</ion-label>
+            <ion-input  type="number"  [(ngModel)]="cantidadProd" id="cantidadProd" (ionChange)="changeCantidad($event)"></ion-input>
+        </ion-item>
+        <br>
+        <br>
+        <div id="AddImg" class="mauto  bg-danger cursor" (click)="clickImgModal()">
+            <ion-label class="text-white  labelmargin0 text-center">Agregar Imagen</ion-label>
+        </div>
+        <div hidden>
+                <input id="fileImg" type="file"  placeholder="Upload file..."/>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class=" bg-danger cursor" (click)="closeModal()">
+            <ion-label class="text-white  mauto text-center">Guardar</ion-label>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+    </ion-content>

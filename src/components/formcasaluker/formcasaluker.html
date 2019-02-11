@@ -1,0 +1,68 @@
+<!-- Generated template for the FormcasalukerComponent component -->
+<div class="borderRound">
+    <ion-label class="mauto bg-danger text-white">Informacion Basica</ion-label>
+    <br>
+    <ion-item no-lines>
+        <ion-icon name="md-contact" item-start class="text-danger"></ion-icon>
+        <ion-label floating class="text-danger">Nombres:</ion-label>
+        <ion-input  type="text" placeholder="Nombre" id="nombre"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+        <ion-icon name="md-mail" item-start class="text-danger"></ion-icon>
+        <ion-label floating class=text-danger>Email:</ion-label>
+        <ion-input  type="email" placeholder="Email" id="Email"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+        <ion-icon name="md-contact" item-start class="text-danger"></ion-icon>
+        <ion-label floating class=text-danger>Apellido:</ion-label>
+        <ion-input  type="text" placeholder="Apellido" id="apellido"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+        <ion-icon name="md-call" item-start class="text-danger"></ion-icon>
+        <ion-label floating class=text-danger>Telefono:</ion-label>
+        <ion-input  type="number" placeholder="Telefono" id="telefono"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+        <ion-icon name="md-call" item-start class="text-danger"></ion-icon>
+        <ion-label floating class=text-danger>Numero:</ion-label>
+        <ion-input  type="number" placeholder="Numero" id="numero"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+        <ion-icon name="md-grid" item-start class="text-danger"></ion-icon>
+        <ion-label floating class=text-danger>tipo Doc.:</ion-label>
+        <ion-select [(ngModel)]="tipoDoc"  id="tipoDoc">
+            <ion-option value="1">Cédula</ion-option>
+            <ion-option value="2">Cédula Extranjería</ion-option>
+            <ion-option value="2">NIP/NUIP</ion-option>
+            <ion-option value="2">Pasaporte</ion-option>
+            <ion-option value="2">Tarjeta Identidad</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item no-lines>
+        <ion-icon name="md-grid" item-start class="text-danger"></ion-icon>
+        <ion-label floating class=text-danger>Numero Doc.:</ion-label>
+        <ion-input  type="number" placeholder="Numero Doc" id="numero"></ion-input>
+    </ion-item>
+
+    <ion-row radio-group [(ngModel)]="sexo">
+          <ion-item>
+              <ion-label floating class=text-danger class="text-danger">Sexo</ion-label>
+          </ion-item>
+        <ion-col>
+          <ion-item>
+            <ion-label>Masculino</ion-label>
+            <ion-radio value="M"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+           <ion-label>Femenino</ion-label>
+            <ion-radio value="F"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+</div>

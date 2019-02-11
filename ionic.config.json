@@ -1,0 +1,7 @@
+{
+  "name": "appCasaLuker",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

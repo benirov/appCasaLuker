@@ -1,0 +1,28 @@
+<!-- Generated template for the DataplaceComponent component -->
+<div>
+    <ion-item no-lines>
+        <ion-icon name="md-locate" item-start class="text-danger"></ion-icon>
+        <ion-label stacked text-danger>Departamento:</ion-label>
+        
+        <ion-select [(ngModel)]="Departamento"  id="departamento" (ionChange)="onChangeDepartamento($event)">
+          <ion-option *ngFor="let Departamentos of DepartamentoItem" [value]="Departamentos.departamento[0].id">{{[Departamentos.departamento[0].text]}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-icon name="md-locate" item-start class="text-danger"></ion-icon>
+      <ion-label stacked text-danger>Ciudad:</ion-label>
+      
+      <ion-select [(ngModel)]="Ciudad"  id="ciudad">
+        <ion-option *ngFor="let Ciudad of CiudadItem" [value]="Ciudad.id">{{[Ciudad.text]}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="md-locate" item-start class="text-danger"></ion-icon>
+        <ion-label stacked text-danger>Dirección:</ion-label>
+        <ion-textarea placeholder="Direccion" di="direccion"></ion-textarea>
+    </ion-item>
+
+    <br>
+</div>
